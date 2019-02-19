@@ -1,0 +1,788 @@
+/*===================================FONTS============================*/ 
+@import url('https://fonts.googleapis.com/css?family=Roboto:300i,500,700&subset=cyrillic');
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=cyrillic');
+/*===================================GLOBAL============================*/ 
+
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font: 14px Roboto, sans-serif;
+  font-weight: 500;
+  color: #212121;
+}
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+.container {
+  width: 1132px;
+  margin: 0 auto;
+  padding: 71px 54px 59px 54px;
+  background-color: #C3C3C3;
+  color: #212121;
+  letter-spacing: 0.01em;
+}
+
+.radio-btn, button {
+  color: #737373;
+}
+
+input[type=text], select {
+  color: #212121;
+  border: 1px solid #D6D6D6;
+}
+
+
+button:focus, input:focus {
+  outline: 0;
+}
+
+input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font: normal 14px Roboto, sans-serif;
+  font-weight: 500;
+  color: #959595;
+}
+input::-moz-placeholder { /* Firefox 19+ */
+  font: normal 14px Roboto, sans-serif;
+  font-weight: 500;
+  color: #959595;
+}
+input:-ms-input-placeholder { /* IE 10+ */
+  font: normal 14px Roboto, sans-serif;
+  font-weight: 500;
+  color: #959595;
+}
+input:-moz-placeholder { /* Firefox 18- */
+  font: normal 14px Roboto, sans-serif;
+  font-weight: 500;
+  color: #959595;
+}
+input::placeholder {
+  font: normal 14px Roboto, sans-serif;
+  font-weight: 500;
+  color: #959595;
+}
+
+.sub-block {
+  margin-bottom: 5px;
+  background-color: #FFFFFF;
+  padding: 68px 60px;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.clear-both {
+  clear: both;
+}
+
+.blue {
+  color: #1F65C2;
+}
+
+.red {
+  color: #F46F59;
+}
+
+.grey {
+  color: #D6D6D6;
+}
+
+.light-orange {
+  color: #EF6C58;
+}
+
+.dark-orange {
+  color: #C71D01;
+}
+
+.green {
+  color: #09B082;
+}
+
+.bg-light-red-odd {
+  background-color: #FEF0EE!important;
+}
+
+.bg-light-red-even {
+  background-color: #F3E6E3!important;
+}
+
+.bg-red-odd {
+  background-color: #FCD4CD!important;
+}
+
+.bg-red-even {
+  background-color: #F3CBC4!important;
+}
+
+.btn-blue {
+  background-color: #1F65C2;
+  -webkit-box-shadow: inset 0px 0px 77px 53px rgba(52,99,161,1);
+  -moz-box-shadow: inset 0px 0px 77px 53px rgba(52,99,161,1);
+  box-shadow: inset 0px 0px 77px 53px rgba(52,99,161,1);
+}
+
+.rouble {
+  font: 13px 'PT Sans', serif;
+  font-weight: 400;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.top-header {
+  font-size: 26px;
+}
+
+.sub-header {
+  font-size: 20px;
+}
+
+.errors {
+  color: #C71D01;
+  float: left;
+  list-style-type: none; 
+}
+
+.radio-btn {
+  background-color: #FFFFFF;
+  overflow: hidden;
+  float: left;
+  border: none;
+}
+.radio-btn label {
+  position: relative;
+  float: left;
+  cursor: pointer;
+}
+
+.radio-btn label span {
+  text-align: center;
+  padding: 5px 17px;
+  display: block;
+  border: 1px solid #D6D6D6;
+  border-right: none;
+}
+
+.form-line .radio-btn:last-child label span {
+  border-right: 1px solid #D6D6D6;
+}
+
+.radio-btn span img {
+    vertical-align: middle;
+    height: 15px;
+}
+
+.radio-btn label input {
+    position: absolute;
+    top: -20px;
+}
+
+.radio-checked {
+  border: 1px solid rgb(52, 99, 161)!important;
+}
+
+.radio-btn .radio-blue input:checked + span {
+  background-color: #1F65C2;
+  -webkit-box-shadow: inset 0px 0px 16px 8px rgba(52,99,161,1);
+  -moz-box-shadow: inset 0px 0px 16px 8px rgba(52,99,161,1);
+  box-shadow: inset 0px 0px 16px 8px rgba(52,99,161,1);
+  color:#fff;
+}
+
+.radio-btn .radio-orange input:checked + span {
+  background-color: #F46F59;
+  -webkit-box-shadow: inset 0px 0px 16px 8px rgba(203,92,74,1);
+  -moz-box-shadow: inset 0px 0px 16px 8px rgba(203,92,74,1);
+  box-shadow: inset 0px 0px 16px 8px rgba(203,92,74,1);
+  color:#fff;
+}
+
+.radio-btn .radio-aqua input:checked + span {
+  background-color: #1DBB90;
+  -webkit-box-shadow: inset 0px 0px 16px 8px rgba(26,170,131,1);
+  -moz-box-shadow: inset 0px 0px 16px 8px rgba(26,170,131,1);
+  box-shadow: inset 0px 0px 16px 8px rgba(26,170,131,1);
+  color:#fff;
+}
+
+.engine-power-radio div.radio-btn {
+  height: 35px;
+}
+
+.radio-btn label.engine-power-radio-1st-radio span {
+  height: 35px;
+  padding: 8px 10px 9px 10px;
+}
+.radio-btn label.engine-power-radio-2nd-radio span {
+  height: 35px;
+  padding: 8px 10px 8px 10px;
+}
+
+.form-line input, .form-line select {
+  margin: 0;
+  float: left;
+}
+
+.input-helper {
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 300;
+  color: #737373;
+  margin-left: 210px;
+  float: left;
+  position: absolute;
+  min-width: 250px;
+}
+
+.sec-input-helper {
+  margin-left: 715px!important;
+}
+
+.sub-block h1, .sub-block h2{
+  padding-bottom: 10px;
+}
+
+form .title {
+  position: absolute;
+  top: 50%;
+  -moz-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 210px;
+  float: left;
+  line-height: 13px;
+}
+
+
+form .sec-title {
+  left: 630px;
+}
+
+form .form-line {
+  height: 32px;
+  margin-top: 30px;
+  position: relative;
+}
+
+form .form-line:first-child {
+  margin-top: 0;
+}
+
+form .form-line-inputs {
+  position: absolute;
+  top: 50%;
+  left: 210px;
+  -moz-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.submit-btn {
+  border: 1px solid #F46F59;
+  background-color: #F46F59;
+  color:#fff;
+  float: right;
+  padding: 15px 35px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  border: 1px solid #C54833;
+  background-color: #C54833;
+}
+
+form .sec-form-line-inputs {
+  left: 715px;
+}
+
+.engine-power-radio input[type=text] {
+  width: 42px;
+  height: 35px;
+  margin-right: 18px;
+  padding: 8px 0px 9px 6px;
+}
+
+.legal-entity-name input[type=text] {
+  width: 359px;
+  padding: 7px 0px 6px 18px;
+}
+
+.state-reg-number input[type=text] {
+  width: 158px;
+  padding: 7px 0px 6px 18px;
+}
+
+.identification-number>input[type=text] {
+  width: 150px;
+  padding: 7px 0px 6px 26px;
+}
+
+.vat-identification-number>input[type=text] {
+  width: 150px;
+  padding: 7px 0px 6px 39px;
+}
+
+.contract-date>input[type=text] {
+  width: 150px;
+  padding: 7px 0px 6px 39px;
+}
+
+.form1 .contract-date .sec-title {
+  left: 588px;
+}
+
+.form1 .contract-date .sec-form-line-inputs {
+  left: 756px;
+}
+
+/*---------------------------FORM 1---------------------------------*/
+.drivers-form {
+  margin-top: 50px;
+}
+
+.drivers-form {
+border-collapse: collapse;
+border-spacing: 0;
+width: 100%;
+width: 100%;
+}
+
+.drivers-form thead th {
+padding: 10px 0;
+text-align: left;
+}
+
+.drivers-form tbody td {
+padding: 5px 0;
+}
+
+.drivers-form tbody td:first-child {
+padding-right: 29px;
+}
+
+.drivers-form tbody tr:nth-child(odd) td {
+padding-bottom: 0;
+}
+.drivers-form tbody tr:nth-child(even) td {
+font-size: 12px;
+font-style: italic;
+font-weight: 300;
+padding-top: 0;
+}
+
+.drivers-form tr td:nth-child(2) {
+  width: 422px;
+}
+.drivers-form tr td:nth-child(3) {
+  width: 128px;
+}
+.drivers-form tr td:nth-child(4) {
+  width: 168px;
+}
+.drivers-form tr td:nth-child(5) {
+  width: 128px;
+}
+
+.drivers-form tr td:nth-child(2) input{ 
+  width: 402px;
+  padding: 8px 0px 6px 15px;
+}
+.drivers-form tr td:nth-child(3) input{
+  width: 108px;
+  padding: 8px 0px 6px 18px;
+}
+.drivers-form tr td:nth-child(4) input:nth-child(1) {
+  width: 67px;
+  padding: 8px 0px 6px 13px;
+}
+.drivers-form tr td:nth-child(4) input:nth-child(2) {
+  width: 85px;
+  padding: 8px 0px 6px 17px;
+}
+.drivers-form tr td:nth-child(5) input{
+  width: 108px;
+  padding: 8px 0px 6px 18px;
+}
+
+.remove-row-btn, .add-row-btn {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  padding: 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+.add-row-block {
+  margin-top: 14px;
+}
+
+.add-row-block>div {
+  display: inline-block;
+}
+
+.add-row-block .input-helper {
+  margin-left: 18px;
+}
+
+.table-foot, .test-car {
+  margin-top: 22px;
+}
+
+.test-car input {
+  width: 168px;
+  height: 35px;
+  padding: 8px 0px 8px 17px;
+}
+
+/*=========================FORM 2=====================*/
+.kbm-result-text {
+  line-height: 26px;
+  margin-bottom: 17px;
+}
+
+.kbm-result-table thead tr th, .kbm-result-table tbody tr td {
+  text-align: center;
+}
+
+.kbm-result-table thead tr th {
+  padding: 16px 0;
+}
+
+.kbm-result-table tbody tr td {
+  padding: 0;
+  border: 1px solid #F3F3F3;
+}
+  
+.kbm-result-table tbody tr:nth-child(even) td, .kbm-result-table tbody tr:nth-child(even) td label span {
+  background-color: #F3F3F3;
+}
+
+.kbm-result-table thead {
+  background-color: #1DBB90;
+  color: #FFFFFF;
+}
+
+.kbm-result-table1 tbody tr td:nth-child(1) {
+  width: 50px;
+}
+.kbm-result-table1 tbody tr td:nth-child(2) {
+  width: 376px;
+  text-align: left;
+  padding-left: 15px;
+}
+.kbm-result-table1 tbody tr td:nth-child(3) {
+  width: 98px;
+}
+.kbm-result-table1 tbody tr td:nth-child(4) {
+  width: 126px;
+}
+.kbm-result-table1 tbody tr td:nth-child(5) {
+  width: 66px;
+}
+.kbm-result-table1 tbody tr td:nth-child(6) {
+  width: 84px;
+}
+.kbm-result-table1 tbody tr td:nth-child(7) {
+  width: 100px;
+}
+
+.kbm-result-table .radio-btn label span {
+  width: 98px;
+  height: 50px;
+  line-height: 36px;
+  border: none;
+}
+
+/*========================FORM 2================================*/
+.release-date input[type=text] {
+  width: 150px;
+  padding: 7px 0px 6px 39px;
+}
+
+.form2 .sec-title {
+  left: 512px;
+}
+
+.form2 .sec-form-line-inputs {
+  left: 629px;
+}
+
+.form2 .sec-input-helper {
+  margin-left: 629px!important;;
+}
+
+.form-line .check-dk input {
+  width: 168px;
+  height: 35px;
+  padding: 8px 0px 8px 17px;
+}
+.check-dk .ui-button {
+    width: 105px!important;
+    height: 35px;
+    padding: 8px 0 8px 12px!important;
+}
+
+.vehicle-brand input[type=text] {
+    width: 350px;
+    padding: 7px 0px 6px 15px;
+}
+
+.form2 .submit-btn {
+  border: 1px solid rgb(52, 99, 161);
+}
+
+.form2 button[type=submit] {
+  border: 1px solid #3F77C2;
+  background-color: #3F77C2;
+}
+
+.form2 button[type=submit]:hover {
+  border: 1px solid #164481;
+  background-color: #164481;
+}
+
+/*========================FORM 3================================*/
+.form3 .form-line-inputs {
+  left: 167px;
+}
+
+.form3 button {
+  margin-top: 98px;
+}
+
+.form3 button.save-btn {
+  border: 1px solid #3F77C2;
+  background-color: #3F77C2;
+  margin-right: 26px;
+}
+
+.form3 button.save-btn:hover {
+  border: 1px solid #164481;
+  background-color: #164481;
+}
+
+.form3 button.execute-btn {
+  border: 1px solid #1DBB90;
+  background-color: #1DBB90;
+}
+
+.form3 button.execute-btn:hover {
+  border: 1px solid #288169;
+  background-color: #288169;
+}
+
+.dk-price input, .dk-discount input {
+  width: 149px;
+  padding: 8px 6px 8px 41px;
+}
+
+.delivery-date .delivery-date input {
+  width: 147px;
+  padding: 8px 6px 8px 38px;
+}
+
+.time-from .time-from input, .time-to .time-to input {
+  width: 107px;
+  padding: 8px 6px 8px 36px;
+}
+
+.metro input {
+  width: 275px;
+  padding: 8px 6px 8px 23px;
+}
+
+.delivery-address-and-comment input {
+  width: 739px;
+  padding: 8px 6px 8px 23px;
+}
+
+.action-start-date input {
+  width: 150px;
+  padding: 8px 6px 8px 40px;  
+}
+
+.dk-price .title {
+  margin-left: 212px;
+}
+
+.dk-price .dk-price {
+  margin-left: 168px;
+}
+
+.dk-price .sec-title {
+  margin-left: 12px;
+}
+
+.dk-discount .sec-title {
+  left: 576px;
+}
+
+.dk-discount .sec-form-line-inputs {
+  left: 756px;
+}
+
+.dk-price-helper {
+  margin-left: 336px;
+}
+
+.dk-discount-helper {
+  margin-left: 756px;
+}
+
+.time-from .second-title {
+  left: 377px;
+}
+
+.time-to .second-form-line-inputs {
+  left: 503px;
+}
+
+.time-from .third-title {
+  left: 670px;
+}
+
+.time-to .third-form-line-inputs {
+  left: 796px;
+}
+
+.delivery-date-helper, .metro-helper, .delivery-address-and-comment-helper, .action-start-date-helper {
+  margin-left: 167px;
+}
+
+.time-from-helper {
+  margin-left: 503px;
+}
+
+.time-to-helper {
+  margin-left: 796px;
+}
+
+.kbm-result-table2 {
+  margin: 42px 0 36px 0;
+}
+.kbm-result-table2 tbody tr td {
+  height: 52px;
+}
+.kbm-result-table2 tbody tr td:nth-child(1) {
+  width: 177px;
+}
+.kbm-result-table2 tbody tr td:nth-child(2) {
+  width: 159px;
+}
+.kbm-result-table2 tbody tr td:nth-child(3) {
+  width: 122px;
+}
+.kbm-result-table2 tbody tr td:nth-child(4) {
+  width: 165px;
+}
+.kbm-result-table2 tbody tr td:nth-child(5) {
+  width: 161px;
+}
+.kbm-result-table2 tbody tr td:nth-child(6) {
+  width: 108px;
+}
+.kbm-result-table2 .radio-btn label span {
+  width: 108px;
+}
+/*==========================INIT======================*/
+
+.legal-entity-name, .state-reg-number, .identification-number, .vat-identification-number, .has-trailer, .max-weight, .drivers-infinity-form, .test-car {
+  display: none;
+}
+
+/*======================DATEPICKER====================*/
+#ui-datepicker-div {
+  padding: 0;
+  border-radius: 0;
+}
+
+.ui-datepicker-header {
+  background: #56CAAA!important;
+  border: none!important;
+  border-radius: 0!important;
+  color: white!important;
+}
+
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus, .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+  background: none!important;
+  border: none!important;
+}
+
+.ui-datepicker-calendar thead {
+  background: #56CAAA!important;
+  color: white!important;
+}
+
+.ui-datepicker td a {
+  text-align: center!important;
+ }
+ 
+.ui-datepicker td:hover, .ui-state-active, .ui-widget-content .ui-state-active {
+   background: #56caaa!important;
+}
+/*======================SELECT====================*/
+
+
+.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br, .ui-selectmenu-button {
+    border-radius: 0!important;
+}
+
+.ui-selectmenu-menu .ui-state-active {
+  background-color: rgb(0, 62, 255)!important;
+}
+
+.ui-button {
+  border: 1px solid #D6D6D6!important;
+  background: rgba(0, 0, 0, 0)!important;
+}
+
+.ui-button:focus {
+  outline:0;
+}
+
+.engine-power-radio .ui-button {
+  width: 126px!important;
+  height: 35px;
+  padding: 8px 0 8px 24px!important;
+}
+
+.test-car .ui-button {
+  width: 105px!important;
+  height: 35px;
+  padding: 8px 0 8px 12px!important;
+}
+
+.test-car span.ui-selectmenu-button {
+  float: left;
+  margin-right: 0;
+}
+
+.insurance-period .ui-button {
+  width: 100px!important;
+  padding: 5px 0 6px 24px!important;
+}
+
+.select-selected {
+  color: #FFFFFF!important;
+  background-color: #1F65C2!important;
+  border: 1px solid rgb(52,99,161)!important;
+  -webkit-box-shadow: inset 0px 0px 77px 53px rgba(52,99,161,1)!important;
+  -moz-box-shadow: inset 0px 0px 77px 53px rgba(52,99,161,1)!important;
+  box-shadow: inset 0px 0px 77px 53px rgba(52,99,161,1)!important;
+}

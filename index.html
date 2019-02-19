@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Калькулятор</title>
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/jquery-ui.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <form class="form1">
+        <div class="sub-block">
+          <h1 class="top-header blue">Калькулятор</h1>
+          <div class="form-line owner">
+            <div class="title">Собственник:</div>
+            <div class="form-line-inputs">
+              <div class="radio-btn">
+                <label class="radio-blue">
+                  <input id="fl-input" type="radio" name="owner" value="FL" checked>
+                  <span class="radio-checked">ФЛ <img id="fl-icon" src="images/icons/fl-light.png" alt="icon"></span>
+                </label>
+              </div>
+              <div class="radio-btn">
+                <label class="radio-blue">
+                  <input id="ul-input" type="radio" name="owner" value="UL">
+                  <span>ЮЛ <img id="ul-icon" src="images/icons/ul-grey.png" alt="icon"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-line legal-entity-name identification-number">
+            <div class="title">Полное наименование юридического лица:</div>
+            <div class="form-line-inputs">
+              <input type="text" name="legal-entity-name" placeholder="ООО “Росгосспецпроект Московская Зорька”">
+            </div>
+            <div class="title sec-title">ИИН:</div>
+            <div class="form-line-inputs sec-form-line-inputs identification-number">
+              <input type="text" name="identification-number" placeholder="000000000000"  pattern="[0-9]{12}">
+            </div>
+          </div>
+          <div class="clear-both"></div>
+          <div class="input-helper legal-entity-name">
+            введите полное наименование ЮЛ
+          </div>
+          <div class="input-helper legal-entity-name sec-input-helper">
+            введите 12 цифр ИНН
+          </div>
+          <div class="form-line state-reg-number vat-identification-number">
+            <div class="title">ОГРН/ОГРНИП:</div>
+            <div class="form-line-inputs">
+              <input type="text" name="state-reg-number" placeholder="000000000000000" pattern="[0-9]{13,15}">
+            </div>
+            <div class="title sec-title">КПП:</div>
+            <div class="form-line-inputs sec-form-line-inputs vat-identification-number">
+              <input type="text" name="vat-identification-number" placeholder="000000000"  pattern="[0-9]{9}">
+            </div>
+          </div>
+          <div class="clear-both"></div>
+          <div class="input-helper state-reg-number">
+            введите 13 цифр ОГРН или 15 цифр ОГРНИП
+          </div>
+          <div class="input-helper legal-entity-name sec-input-helper">
+            введите 9 цифр КПП
+          </div>
+          <div class="form-line sity-registration">
+            <div class="title">Регистрация собственника автомобиля:</div>
+            <div class="form-line-inputs">
+              <div class="radio-btn">
+                <label class="radio-blue">
+                  <input type="radio" name="sity-registration" value="moscow" checked>
+                  <span class="radio-checked">Москва</span>
+                </label>
+              </div>
+              <div class="radio-btn">
+                <label class="radio-blue">
+                  <input type="radio" name="sity-registration" value="mp">
+                  <span>МО</span>
+                </label>
+              </div>
+              <div class="radio-btn">
+                <label class="radio-blue">
+                  <input type="radio" name="sity-registration" value="s-pb">
+                  <span>С-Пб</span>
+                </label>
+              </div>
+              <div class="radio-btn">
+                <label class="radio-blue">
+                  <input type="radio" name="sity-registration" value="lo">
+                  <span>ЛО</span>
+                </label>
+              </div>
+              <div class="radio-btn">
+                <label class="radio-blue">
+                  <input type="radio" name="sity-registration" value="region">
+                  <span>Регион</span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="clear-both"></div>
+          <div class="form-line vehicle-category">
+            <div class="title">Категория ТС:</div>
+            <div class="form-line-inputs">
+              <div class="radio-btn">
+                <label class="radio-blue">
+                  <input id="cat-a-input" type="radio" name="vehicle-category" value="A">
+                  <span>A <img id="cat-a-icon" src="images/icons/cat-a-grey.png" alt="icon"></span>
+                </label>
+              </div>
+              <div class="radio-btn">
+                <label class="radio-blue">
+                  <input id="cat-b-input" type="radio" name="vehicle-category" value="B" checked>
+                  <span class="radio-checked">B <img id="cat-b-icon" src="images/icons/cat-b-light.png" alt="icon"></span>
+                </label>
+              </div>
+              <div class="radio-btn">
+                <label class="radio-blue">
+                  <input id="cat-c-input" type="radio" name="vehicle-category" value="C">
+                  <span>C <img id="cat-c-icon" src="images/icons/cat-c-grey.png" alt="icon"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="clear-both"></div>
+          <div class="form-line engine-power-radio">
+            <div class="title">Мощность двигателя в лошадиных силах:</div>
+            <div class="form-line-inputs">
+              <div class="radio-btn">
+                <label class="engine-power-radio engine-power-radio-1st-radio radio-blue ">
+                  <input type="radio" id="engine-selected-text" name="engine-power-radio" value="text" checked>
+                  <span class="radio-checked">&nbsp;</span>
+                </label>
+              </div>
+              <input type="text" name="engine-power-radio-text" placeholder="125" pattern="[0-9]{1,3}">
+              <div class="radio-btn">
+                <label class="engine-power-radio engine-power-radio-2nd-radio radio-blue">
+                  <input type="radio" id="engine-selected-select" name="engine-power-radio" value="select">
+                  <span>&nbsp;</span>
+                </label>
+              </div>
+              <select name="engine-power-radio-select">
+                <option value="< 50">< 50</option>
+                <option value="70 ... 100">70 ... 100</option>
+                <option value="100 ... 120">100 ... 120</option>
+                <option value="120 ... 150">120 ... 150</option>
+                <option value="> 150" selected>> 150</option>
+              </select>
+            </div>
+          </div>
+          <div class="clear-both"></div>
+          <div class="input-helper engine-power-radio">
+            введите вручную или выберите из списка
+          </div>
+          <div class="form-line has-trailer">
+            <div class="title">Использование с прицепом:</div>
+            <div class="form-line-inputs">
+              <div class="radio-btn">
+                <label class="radio-blue">
+                  <input type="radio" name="has-trailer" value="yes" checked>
+                  <span class="radio-checked">Да <img id="trailer-icon" src="images/icons/trailer-light.png" alt="icon"></span>
+                </label>
+              </div>
+              <div class="radio-btn">
+                <label class="radio-blue">
+                  <input type="radio" name="has-trailer" value="no">
+                  <span>Нет</span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="clear-both"></div>
+          <div class="form-line max-weight">
+            <div class="title">Разрешенная максимальная масса:</div>
+            <div class="form-line-inputs">
+              <div class="radio-btn">
+                <label class="radio-blue">
+                  <input type="radio" name="max-weight" value="<16" checked>
+                  <span class="radio-checked">< 16 т</span>
+                </label>
+              </div>
+              <div class="radio-btn">
+                <label class="radio-blue">
+                  <input type="radio" name="max-weight" value=">16">
+                  <span>> 16 т</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sub-block">
+          <h2 class="sub-header light-orange">Расчет КБМ</h2>
+          <div class="form-line drivers contract-date">
+            <div class="title">Состав водителей:</div>
+            <div class="form-line-inputs drivers">
+              <div class="radio-btn">
+                <label class="radio-orange">
+                  <input id="dr-list-radio" type="radio" name="drivers" value="list" checked>
+                  <span>Список</span>
+                </label>
+              </div>
+              <div class="radio-btn">
+                <label class="radio-aqua">
+                  <input id="dr-inf-radio" type="radio" name="drivers" value="inf">
+                  <span>Без ограничения</span>
+                </label>
+              </div>
+            </div>
+            <div class="title sec-title">Дата начала договора:</div>
+            <div class="form-line-inputs sec-form-line-inputs contract-date">
+              <input type="text" class="datepicker" name="contract-date" placeholder="17.02.2016">
+            </div>
+          </div>
+          <div class="input-helper contract-date" style="margin-left: 756px;">
+            введите дату
+          </div>
+          <table class="drivers-form drivers-list-form">
+            <thead>
+              <tr>
+                <th>№</th>
+                <th>ФИО</th>
+                <th>Дата рождения</th>
+                <th>Вод. удостоверение</th>
+                <th>Дата выдачи ВУ</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>
+                  <input type="text" class="driver-fio" name="driver-fio[]" placeholder="Шарафутдинов Константин Станиславович">
+                </td>
+                <td>
+                  <input type="text" class="driver-birth datepicker" name="driver-birth[]" placeholder="31.12.1975">
+                </td>
+                <td>
+                  <input type="text" class="driver-license-series" name="driver-license-series[]" placeholder="77 MB"><input type="text" class="driver-license-number" name="driver-license-number[]" placeholder="000000">
+                </td>
+                <td>
+                  <input type="text" class="driver-license-date datepicker" name="driver-license-date[]" placeholder="31.12.2013">
+                </td>
+                <td><button class="remove-row-btn" id="row-1">
+                  <img src="images/icons/remove-btn.png" alt="remove-btn">
+                </button></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>введите ФИО водителя</td>
+                <td>введите дату</td>
+                <td>введите серию и номер</td>
+                <td>введите дату</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="add-row-block">
+            <button class="add-row-btn">
+              <img src="images/icons/add-btn.png" alt="add-btn">
+            </button>
+            <div class="input-helper">
+              добавить еще одного водителя
+            </div>
+          </div>
+          <table class="drivers-form drivers-infinity-form">
+            <thead>
+              <tr>
+                <th>№</th>
+                <th>ФИО</th>
+                <th>Дата рождения</th>
+                <th>Паспорт РФ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>
+                  <input type="text" class="driver-fio" name="driver-fio[]" placeholder="Кривоносов Константин Станиславович">
+                </td>
+                <td>
+                  <input type="text" class="driver-birth datepicker" name="driver-birth[]" placeholder="31.12.1975">
+                </td>
+                <td>
+                  <input type="text" class="driver-passport-series" name="passport-series[]" placeholder="77 99"><input type="text" class="driver-passport-number" name="passport-number[]" placeholder="000000">
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>введите ФИО водителя</td>
+                <td>введите дату</td>
+                <td>введите серию и номер</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="form-line test-car">
+            <div class="title">Проверка автомобиля:</div>
+            <div class="form-line-inputs">
+              <select name="test-car-method">
+                <option value="vin">VIN</option>
+                <option value="chassis">шасси</option>
+                <option value="reg-number">рег. номер</option>
+              </select>
+              <input type="text" name="test-car-code" placeholder="00000000000000000">
+            </div>
+          </div>
+          <div class="table-foot">
+            <ul class="errors"></ul>
+            <button type="submit" class="submit-btn">
+              Отправить запрос
+            </button>
+            <div class="clear-both"></div>
+          </div>
+        </div>
+      </form>
+      <div class="sub-block">
+        <div class="kbm-result-text">
+          <span class="green">КБМ получен в PCA:</span> ID 3461111111 от 11.09.2016 11:25:21 (по МСК)
+          <br>
+          <br>
+          <span class="green">Результат запроса:</span>
+          <br>
+          <span class="blue">КБМ = 1</span> (для договора с началом срока страхования от 11.09.2016)
+          <br>
+          <span class="blue">Класс КБМ = 3</span> (для договора с началом срока страхования от 11.09.2016)
+          <br>
+          <span class="blue">Информация об убытках:</span> Убытков нет
+          <br>
+          <br>
+          <span class="green">Параметры запроса:</span>
+        </div>
+        <table class="kbm-result-table kbm-result-table1">
+          <thead>
+            <tr>
+              <th>№</th>
+              <th>ФИО</th>
+              <th colspan="2">Водительское удостоверение</th>
+              <th>КБМ</th>
+              <th>Убытки</th>
+              <th>В расчет</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Шарафутдинов Константин Станиславович</td>
+              <td>77 МВ</td>
+              <td>000000</td>
+              <td>1</td>
+              <td>0  <span class="rouble">&#8381;</span></td>
+              <td>
+                <div class="radio-btn">
+                  <label class="radio-blue">
+                    <input type="checkbox" name="in-calculation[]" checked>
+                    <span><img src="images/icons/check-mark.png" alt="icon"></span>
+                  </label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Губайдуллин Ростислав Ахметович</td>
+              <td>77 МВ</td>
+              <td>000000</td>
+              <td>1</td>
+              <td>0  <span class="rouble">&#8381;</span></td>
+              <td>
+                <div class="radio-btn">
+                  <label class="radio-blue">
+                    <input type="checkbox" name="in-calculation[]">
+                    <span><img src="images/icons/check-mark.png" alt="icon"></span>
+                  </label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Воскобойникова Анжелика Станиславовна</td>
+              <td>77 МВ</td>
+              <td>000000</td>
+              <td>1</td>
+              <td>0  <span class="rouble">&#8381;</span></td>
+              <td>
+                <div class="radio-btn">
+                  <label class="radio-blue">
+                    <input type="checkbox" name="in-calculation[]">
+                    <span><img src="images/icons/check-mark.png" alt="icon"></span>
+                  </label>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <form class="form2">
+        <div class="sub-block">
+          <div class="form-line release-date">
+            <div class="title">Год выпуска:</div>
+            <div class="form-line-inputs">
+              <input type="text" class="release-date datepicker" name="release-date" placeholder="17.02.2016">
+            </div>
+          </div>
+          <div class="clear-both"></div>
+          <div class="input-helper">
+            введите дату
+          </div>
+          <div class="form-line dk check-dk">
+            <div class="title">ДК:</div>
+            <div class="form-line-inputs dk">
+              <div class="radio-btn">
+                <label class="radio-blue">
+                  <input type="radio" name="dk" value="yes" checked>
+                  <span class="radio-checked">Требуется</span>
+                </label>
+              </div>
+              <div class="radio-btn">
+                <label class="radio-blue">
+                  <input type="radio" name="dk" value="no">
+                  <span>Не требуется</span>
+                </label>
+              </div>
+            </div>
+            <div class="title sec-title">Проверить ДК:</div>
+            <div class="form-line-inputs sec-form-line-inputs check-dk">
+              <select name="check-dk-select">
+                <option value="vin">VIN</option>
+                <option value="chassis">шасси</option>
+                <option value="reg-number">рег. номер</option>
+              </select>
+              <input type="text" name="check-dk-text" placeholder="00000000000000000">
+            </div>
+          </div>
+          <div class="clear-both"></div>
+          <div class="input-helper sec-input-helper">
+            выберите из списка и введите значение
+          </div>
+          <div class="form-line insurance-period">
+            <div class="title">Период страхования:</div>
+            <div class="form-line-inputs">
+              <div class="radio-btn">
+                <label class="radio-blue">
+                  <input type="radio" name="insurance-period" checked>
+                  <span class="radio-checked">12 мес.</span>
+                </label>
+              </div>
+              <div class="radio-btn">
+                <label class="radio-blue">
+                  <input type="radio" name="insurance-period">
+                  <span>5 мес.</span>
+                </label>
+              </div>
+              <div class="radio-btn">
+                <label class="radio-blue">
+                  <input type="radio" name="insurance-period">
+                  <span>3 мес.</span>
+                </label>
+              </div>
+              <select name="insurance-period">
+                <option>Иное</option>
+                <option>3 мес.</option>
+                <option>4 мес.</option>
+                <option>5 мес.</option>
+                <option>6 мес.</option>
+                <option>7 мес.</option>
+                <option>8 мес.</option>
+                <option>9 мес.</option>
+                <option>10 мес.</option>
+              </select>
+            </div>
+          </div>
+          <div class="clear-both"></div>
+          <div class="input-helper">
+            выберите значение
+          </div>
+          <div class="form-line vehicle-brand">
+            <div class="title">Период страхования:</div>
+            <div class="form-line-inputs">
+              <div class="radio-btn">
+                <label class="radio-blue">
+                  <input type="radio" name="vehicle-brand" checked>
+                  <span class="radio-checked">Иное</span>
+                </label>
+              </div>
+              <div class="radio-btn">
+                <label class="radio-blue">
+                  <input type="radio" name="vehicle-brand">
+                  <span>LADA, ВАЗ, ВИС, ЗАЗ, ИЖ, Москвич, УАЗ</span>
+                </label>
+              </div>
+              <div class="radio-btn">
+                <label class="radio-blue">
+                  <input type="radio" name="vehicle-brand">
+                  <span>ГАЗ</span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="clear-both"></div>
+          <div class="input-helper">
+            выберите марку автомобиля или нажмите “Иное”, если такой марки нет
+          </div>
+          <div class="form-line vehicle-brand vehicle-brand-vis">
+            <div class="form-line-inputs">
+              <input type="text" name="vehicle-brand" placeholder="Nissan">
+            </div>
+          </div>
+          <div class="clear-both"></div>
+          <div class="input-helper vehicle-brand-vis">
+            введите марку автомобиля
+          </div>
+          <button type="submit" class="submit-btn">
+            Рассчитать
+          </button>
+        </div>
+      </form>
+      <form class="form3">
+        <div class="sub-block">
+          <div class="form-line dk-price dk-discount">
+            <div class="title">Стоимость ДК:</div>
+            <div class="form-line-inputs dk-price">
+              <input type="text" name="dk-price" placeholder="1 500,00 р.">
+            </div>
+            <div class="title sec-title">Размер скидки:</div>
+            <div class="form-line-inputs sec-form-line-inputs dk-discount">
+              <input type="text" name="dk-discount" placeholder="1 000,00 р.">
+            </div>
+          </div>
+          <div class="clear-both"></div>
+          <div class="input-helper dk-price-helper">
+            введите стоимость
+          </div>
+          <div class="input-helper dk-discount-helper">
+            введите сумму скидки
+          </div>
+          <table class="kbm-result-table kbm-result-table2">
+            <thead>
+              <tr>
+                <th>Страховая компания</th>
+                <th>Стоимость ОСАГО</th>
+                <th>КВ</th>
+                <th>На руки с клиента</th>
+                <th>Итоговая прибыль</th>
+                <th>Оформить заказ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>АЛЬФА</td>
+                <td>10 433,00 <span class="rouble">&#8381;</span></td>
+                <td>2 816,91 <span class="rouble">&#8381;</span></td>
+                <td class="bg-light-red-odd">11 633,00 <span class="rouble">&#8381;</span></td>
+                <td class="bold bg-red-odd ">3 866,91 <span class="rouble bold">&#8381;</span></td>
+                <td>
+                  <div class="radio-btn">
+                    <label class="radio-blue">
+                      <input type="checkbox" name="in-order[]" checked>
+                      <span><img src="images/icons/check-mark.png" alt="icon"></span>
+                    </label>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>РЕСО</td>
+                <td>11 250,00 <span class="rouble">&#8381;</span></td>
+                <td>3 037,50 <span class="rouble">&#8381;</span></td>
+                <td class="bg-light-red-even">12 450,00 <span class="rouble">&#8381;</span></td>
+                <td class="bg-red-even bold">5 087,50 <span class="rouble bold">&#8381;</span></td>
+                <td>
+                  <div class="radio-btn">
+                    <label class="radio-blue">
+                      <input type="checkbox" name="in-order[]">
+                      <span><img src="images/icons/check-mark.png" alt="icon"></span>
+                    </label>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>МАКС</td>
+                <td>12 250,00 <span class="rouble">&#8381;</span></td>
+                <td>3 250,00 <span class="rouble">&#8381;</span></td>
+                <td class="bg-light-red-odd">13 700,00 <span class="rouble">&#8381;</span></td>
+                <td class="bg-red-odd bold">2 300,00 <span class="rouble bold">&#8381;</span></td>
+                <td>
+                  <div class="radio-btn">
+                    <label class="radio-blue">
+                      <input type="checkbox" name="in-order[]">
+                      <span><img src="images/icons/check-mark.png" alt="icon"></span>
+                    </label>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>ЭРГО</td>
+                <td><span class="red">Запрет</span></td>
+                <td><span class="red">Запрет</span></td>
+                <td><span class="red">Запрет</span></td>
+                <td><span class="red">Запрет</span></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="form-line delivery-date time-from time-to">
+            <div class="title">Дата доставки:</div>
+            <div class="form-line-inputs delivery-date">
+              <input type="text" class="datepicker" name="delivery-date" placeholder="17.09.2016">
+            </div>
+            <div class="title second-title">Время с:</div>
+            <div class="form-line-inputs second-form-line-inputs time-from">
+              <input type="text" name="time-from" placeholder="09:00">
+            </div>
+            <div class="title third-title">Время до:</div>
+            <div class="form-line-inputs third-form-line-inputs time-to">
+              <input type="text" name="time-to" placeholder="09:00">
+            </div>
+          </div>
+          <div class="clear-both"></div>
+          <div class="input-helper delivery-date-helper">
+            введите дату
+          </div>
+          <div class="input-helper time-from-helper">
+            введите время
+          </div>
+          <div class="input-helper time-to-helper">
+            введите время
+          </div>
+          <div class="form-line metro">
+            <div class="title">Метро:</div>
+            <div class="form-line-inputs metro">
+              <input type="text" name="metro" placeholder="Тушинская">
+            </div>
+          </div>
+          <div class="clear-both"></div>
+          <div class="input-helper metro-helper">
+            укажите ближайшую к вам станцию метро
+          </div>
+          <div class="form-line delivery-address-and-comment">
+            <div class="title">Адрес доставки и комментарии:</div>
+            <div class="form-line-inputs delivery-address-and-comment">
+              <input type="text" name="delivery-address-and-comment" placeholder="Красногорский район, Опалиховский пер., 13,  1-й подъезд, 2 этаж, звонить 3 раза">
+            </div>
+          </div>
+          <div class="clear-both"></div>
+          <div class="input-helper delivery-address-and-comment-helper">
+            укажите ближайшую к вам станцию метро
+          </div>
+          <div class="form-line action-start-date">
+            <div class="title">Дата начала действия:</div>
+            <div class="form-line-inputs action-start-date">
+              <input type="text" class="datepicker" name="action-start-date" placeholder="17.09.2016">
+            </div>
+          </div>
+          <div class="clear-both"></div>
+          <div class="input-helper action-start-date-helper">
+            введите дату
+          </div>
+          <button type="submit" class="submit-btn execute-btn">
+            Оформить
+          </button>
+          <button class="submit-btn save-btn">
+            Сохранить
+          </button>
+          <div class="clear-both"></div>
+        </div>
+      </form>
+    </div>
+
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/datepicker-ru.js"></script>
+    <script src="js/common.js"></script>
+  </body>
+</html>
